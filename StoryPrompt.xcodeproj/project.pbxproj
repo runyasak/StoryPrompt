@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		839B9D042613944700F9A9D6 /* StoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839B9D032613944700F9A9D6 /* StoryPromptViewController.swift */; };
 		83E23611261371940080720E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E23610261371940080720E /* AppDelegate.swift */; };
 		83E23613261371940080720E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E23612261371940080720E /* SceneDelegate.swift */; };
-		83E23615261371940080720E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E23614261371940080720E /* ViewController.swift */; };
+		83E23615261371940080720E /* AddStoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E23614261371940080720E /* AddStoryPromptViewController.swift */; };
 		83E23618261371940080720E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E23616261371940080720E /* Main.storyboard */; };
 		83E2361A261371950080720E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E23619261371950080720E /* Assets.xcassets */; };
 		83E2361D261371950080720E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E2361B261371950080720E /* LaunchScreen.storyboard */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		839B9D032613944700F9A9D6 /* StoryPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPromptViewController.swift; sourceTree = "<group>"; };
 		83E2360D261371940080720E /* StoryPrompt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryPrompt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E23610261371940080720E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E23612261371940080720E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		83E23614261371940080720E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83E23614261371940080720E /* AddStoryPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryPromptViewController.swift; sourceTree = "<group>"; };
 		83E23617261371940080720E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83E23619261371950080720E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83E2361C261371950080720E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		839B9D062613945200F9A9D6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				83E23614261371940080720E /* AddStoryPromptViewController.swift */,
+				839B9D032613944700F9A9D6 /* StoryPromptViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		83E23604261371940080720E = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +71,10 @@
 		83E2360F261371940080720E /* StoryPrompt */ = {
 			isa = PBXGroup;
 			children = (
+				839B9D062613945200F9A9D6 /* ViewControllers */,
 				83E236252613725F0080720E /* Model */,
 				83E23610261371940080720E /* AppDelegate.swift */,
 				83E23612261371940080720E /* SceneDelegate.swift */,
-				83E23614261371940080720E /* ViewController.swift */,
 				83E23616261371940080720E /* Main.storyboard */,
 				83E23619261371950080720E /* Assets.xcassets */,
 				83E2361B261371950080720E /* LaunchScreen.storyboard */,
@@ -151,8 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839B9D042613944700F9A9D6 /* StoryPromptViewController.swift in Sources */,
 				83E2362A261372DA0080720E /* StoryPromptEntry.swift in Sources */,
-				83E23615261371940080720E /* ViewController.swift in Sources */,
+				83E23615261371940080720E /* AddStoryPromptViewController.swift in Sources */,
 				83E23611261371940080720E /* AppDelegate.swift in Sources */,
 				83E23613261371940080720E /* SceneDelegate.swift in Sources */,
 				83E23627261372B00080720E /* StoryPrompts.swift in Sources */,
