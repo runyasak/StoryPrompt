@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         configuration.filter = .images
         configuration.selectionLimit = 1
         let controller = PHPickerViewController(configuration: configuration)
+        controller.delegate = self
         present(controller, animated: true)
     }
     
