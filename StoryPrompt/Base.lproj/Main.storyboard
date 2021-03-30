@@ -144,6 +144,7 @@
                         <outlet property="nounTextField" destination="B9h-JF-5x8" id="kvY-AR-uJm"/>
                         <outlet property="numberLabel" destination="Uk4-ns-h1x" id="hQf-mb-3fb"/>
                         <outlet property="numberSlider" destination="hss-FT-OaH" id="f7U-IG-kRy"/>
+                        <outlet property="storyPromptImageView" destination="Pb4-if-6WZ" id="OiO-Gt-rd2"/>
                         <outlet property="verbTextField" destination="z46-4b-bFn" id="4Nc-YL-zcL"/>
                     </connections>
                 </viewController>
