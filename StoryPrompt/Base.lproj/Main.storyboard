@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="w7C-Qg-cyz">
-                                <rect key="frame" x="20" y="101" width="350" height="652"/>
+                                <rect key="frame" x="20" y="145" width="350" height="652"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3cK-zp-veT">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
@@ -151,21 +151,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="-711"/>
+            <point key="canvasLocation" x="1106" y="-287"/>
         </scene>
         <!--Story Prompt View Controller-->
         <scene sceneID="jSy-aS-irZ">
             <objects>
                 <viewController id="Rnx-EY-6ak" customClass="StoryPromptViewController" customModule="StoryPrompt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgV-yb-Oy6">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="object-badge-banner" translatesAutoresizingMaskIntoConstraints="NO" id="VZz-mA-MQb">
-                                <rect key="frame" x="0.0" y="-105" width="390" height="1000"/>
+                                <rect key="frame" x="0.0" y="-78" width="390" height="1000"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lAb-6M-Fo2">
-                                <rect key="frame" x="75" y="340" width="240" height="110"/>
+                                <rect key="frame" x="75" y="367" width="240" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="2eG-Ql-Xgh"/>
                                     <constraint firstAttribute="height" constant="110" id="IMR-IC-q5Y"/>
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Au-Ul-1vO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913.8461538461538" y="118.72037914691943"/>
+            <point key="canvasLocation" x="1105" y="661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tpd-zs-sSc">
@@ -211,7 +211,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSh-fa-1KV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-869" y="119"/>
+            <point key="canvasLocation" x="-903" y="91"/>
         </scene>
         <!--Story Prompt Table View Controller-->
         <scene sceneID="r6z-6v-hZs">
@@ -245,7 +245,13 @@
                             <outlet property="delegate" destination="lmN-cr-I88" id="cv1-F9-1hX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4RB-gq-YpK"/>
+                    <navigationItem key="navigationItem" id="4RB-gq-YpK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dHD-Dl-RZj">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="PGd-RX-9r1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Rnx-EY-6ak" kind="show" identifier="ShowStoryPrompt" id="x3M-Xc-pAl"/>
                     </connections>
