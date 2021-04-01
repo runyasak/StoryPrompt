@@ -175,13 +175,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Ys4-CF-VNz">
+                                <rect key="frame" x="138.66666666666666" y="780" width="113" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60e-LG-tkU">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Discard"/>
+                                        <connections>
+                                            <action selector="cancelStoryPrompt:" destination="Rnx-EY-6ak" eventType="touchUpInside" id="uXu-hj-gvv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4c-T1-LlF">
+                                        <rect key="frame" x="79" y="0.0" width="34" height="30"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <segue destination="ckP-9w-vnV" kind="unwind" unwindAction="saveStoryPromptWithUnwindSegue:" id="qbr-Be-OZQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="evh-MB-zI7"/>
                         <color key="backgroundColor" red="0.0" green="0.89411764709999997" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Ys4-CF-VNz" firstAttribute="centerX" secondItem="bgV-yb-Oy6" secondAttribute="centerX" id="0pf-PI-OEJ"/>
                             <constraint firstItem="VZz-mA-MQb" firstAttribute="centerY" secondItem="bgV-yb-Oy6" secondAttribute="centerY" id="BNY-1a-cme"/>
                             <constraint firstItem="lAb-6M-Fo2" firstAttribute="centerX" secondItem="VZz-mA-MQb" secondAttribute="centerX" id="H06-2Y-hBv"/>
                             <constraint firstItem="lAb-6M-Fo2" firstAttribute="centerY" secondItem="VZz-mA-MQb" secondAttribute="centerY" id="Uqx-5g-Yst"/>
+                            <constraint firstItem="Ys4-CF-VNz" firstAttribute="bottom" secondItem="evh-MB-zI7" secondAttribute="bottom" id="VJt-gg-Iac"/>
                             <constraint firstItem="VZz-mA-MQb" firstAttribute="centerX" secondItem="bgV-yb-Oy6" secondAttribute="centerX" id="hi8-jD-GjB"/>
                             <constraint firstItem="VZz-mA-MQb" firstAttribute="width" secondItem="bgV-yb-Oy6" secondAttribute="width" id="kms-rm-cnt"/>
                         </constraints>
@@ -189,9 +212,11 @@
                     <navigationItem key="navigationItem" id="JR4-Te-aAu"/>
                     <connections>
                         <outlet property="storyPromptTextView" destination="lAb-6M-Fo2" id="7Cm-99-G0l"/>
+                        <segue destination="FTq-9p-wqj" kind="unwind" identifier="CancelStoryPrompt" unwindAction="cancelStoryPromptWithUnwindSegue:" id="i4j-Rv-GMB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Au-Ul-1vO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="FTq-9p-wqj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1105" y="661"/>
         </scene>
@@ -257,12 +282,13 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0P-bm-vvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ckP-9w-vnV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="151" y="91"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3cN-Ar-4Bl"/>
+        <segue reference="x3M-Xc-pAl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="10.circle" catalog="system" width="128" height="121"/>

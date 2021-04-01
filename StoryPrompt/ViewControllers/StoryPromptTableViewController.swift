@@ -3,30 +3,22 @@ import UIKit
 class StoryPromptTableViewController: UITableViewController {
     
     var storyPrompts = [StoryPromptEntry]()
+    
+    @IBAction func saveStoryPrompt(unwindSegue: UIStoryboardSegue) {
+        print("saveStoryPromptWithUnwindSegue")
+        guard let storyPromptViewController = unwindSegue.source as? StoryPromptViewController else {
+            return
+        }
+        
+        storyPrompts.append(storyPromptViewController.storyPrompt)
+        tableView.reloadData()
+    }
+    
+    @IBAction func cancelStoryPrompt(unwindSegue: UIStoryboardSegue) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let storyPrompt1 = StoryPromptEntry()
-        let storyPrompt2 = StoryPromptEntry()
-        let storyPrompt3 = StoryPromptEntry()
-        
-        storyPrompt1.noun = "toaster"
-        storyPrompt1.adjective = "smelly"
-        storyPrompt1.verb = "attacks"
-        storyPrompt1.number = 5
-        
-        storyPrompt2.noun = "toaster"
-        storyPrompt2.adjective = "smelly"
-        storyPrompt2.verb = "attacks"
-        storyPrompt2.number = 5
-        
-        storyPrompt3.noun = "toaster"
-        storyPrompt3.adjective = "smelly"
-        storyPrompt3.verb = "attacks"
-        storyPrompt3.number = 5
-        
-        storyPrompts = [storyPrompt1, storyPrompt2, storyPrompt3]
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
