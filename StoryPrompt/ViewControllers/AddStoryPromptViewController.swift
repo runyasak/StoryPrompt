@@ -68,6 +68,16 @@ class AddStoryPromptViewController: UIViewController {
         present(controller, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StoryPrompt" {
+            guard let storyPromptViewController = segue.destination as? StoryPromptViewController else {
+                return
+            }
+            storyPromptViewController.storyPrompt = storyPrompt
+            storyPromptViewController.isNewStoryPrompt = true
+        }
+    }
+    
 }
 
 extension AddStoryPromptViewController: UITextFieldDelegate {

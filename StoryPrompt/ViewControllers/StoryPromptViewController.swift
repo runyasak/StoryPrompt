@@ -5,27 +5,26 @@ class StoryPromptViewController: UIViewController {
     @IBOutlet weak var storyPromptTextView: UITextView!
     
     var storyPrompt = StoryPromptEntry()
+    var isNewStoryPrompt = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyPrompt.noun = "toaster"
-        storyPrompt.verb = "swims"
-        storyPrompt.adjective = "smelly"
-        storyPrompt.number = 7
-        
         storyPromptTextView.text = storyPrompt.description
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        if isNewStoryPrompt {
+            let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveStoryPrompt))
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelStoryPrompt))
+            
+            navigationItem.rightBarButtonItem = saveButton
+            navigationItem.leftBarButtonItem = cancelButton
+        }
     }
 
-    @IBAction func cancelStoryPrompt(_ sender: UIButton) {
+    @objc func cancelStoryPrompt(_ sender: UIButton) {
         performSegue(withIdentifier: "CancelStoryPrompt", sender: nil)
+    }
+    
+    @objc func saveStoryPrompt(_ sender: UIButton) {
+        performSegue(withIdentifier: "SaveStoryPrompt", sender: nil)
     }
 }
