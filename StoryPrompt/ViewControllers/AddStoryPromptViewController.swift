@@ -40,20 +40,22 @@ class AddStoryPromptViewController: UIViewController {
         }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         numberSlider.value = 7.5
-        storyPrompt.noun = "toaster"
-        storyPrompt.adjective = "smelly"
-        storyPrompt.verb = "burps"
-        storyPrompt.number = 10
+        storyPrompt.number = Int(numberSlider.value)
         storyPromptImageView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage))
         storyPromptImageView.addGestureRecognizer(gestureRecognizer)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStoryPrompt), name: UIResponder.keyboardDidShowNotification, object: nil)
     }
     
-    func updateStoryPrompt() {
+    @objc func updateStoryPrompt() {
         storyPrompt.noun = nounTextField.text ?? ""
         storyPrompt.adjective = adjectiveTextField.text ?? ""
         storyPrompt.verb = verbTextField.text ?? ""
@@ -83,7 +85,6 @@ class AddStoryPromptViewController: UIViewController {
 extension AddStoryPromptViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        updateStoryPrompt()
         return true
     }
 }

@@ -4,14 +4,11 @@ class StoryPromptTableViewController: UITableViewController {
     
     var storyPrompts = [StoryPromptEntry]()
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @IBAction func saveStoryPrompt(unwindSegue: UIStoryboardSegue) {
-        print("saveStoryPromptWithUnwindSegue")
-        guard let storyPromptViewController = unwindSegue.source as? StoryPromptViewController else {
-            return
-        }
-        
-        storyPrompts.append(storyPromptViewController.storyPrompt)
-        tableView.reloadData()
     }
     
     @IBAction func cancelStoryPrompt(unwindSegue: UIStoryboardSegue) {
@@ -19,6 +16,7 @@ class StoryPromptTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStoryPromptList(notification:)), name: .StoryPromptSaved, object: nil)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,5 +48,14 @@ class StoryPromptTableViewController: UITableViewController {
             
             storyPromptViewController.storyPrompt = storyPrompt
         }
+    }
+    
+    @objc func updateStoryPromptList(notification: Notification) {
+        guard let storyPrompt = notification.object as? StoryPromptEntry else {
+            return
+        }
+        
+        storyPrompts.append(storyPrompt)
+        tableView.reloadData()
     }
 }
